@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
 /**
- *  ################ 
+ *  ################
  *  ##            ##     Copyright (c) 2025 Wvnderlab Agency
- *  ##                   
+ *  ##
  *  ##   ##  ###  ##     ✉️ moin@wvnderlab.com
  *  ##    #### ####      🔗 https://wvnderlab.com
- *  #####  ##  ###   
+ *  #####  ##  ###
  */
 
 namespace WvnderlabAgency\CodeStyles\Composer;
