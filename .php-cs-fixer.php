@@ -111,7 +111,7 @@ return (new Config())
         // Whitespace & Formatting
         // ------------------------------------------------------------------------
         'blank_line_after_namespace' => true,
-        'blank_line_after_opening_tag' => false,
+        'blank_line_after_opening_tag' => true,
         'blank_line_before_statement' => ['statements' => ['continue', 'break', 'return']],
         'blank_line_between_import_groups' => false,
         'blank_lines_before_namespace' => true,
