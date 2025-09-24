@@ -9,7 +9,11 @@ $finder = Finder::create()
     ->name('*.php')
     ->exclude([
         'bootstrap/cache',
+        'bootstrap/providers.php',
+        'config',
+        'docker',
         'node_modules',
+        'lang',
         'resources',
         'storage',
         'tests',
