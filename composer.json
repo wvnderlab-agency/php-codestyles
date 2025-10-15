@@ -37,6 +37,8 @@
         ],
         "analyze": "./vendor/bin/phpstan analyse",
         "format": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php",
-        "format:diff": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --dry-run"
+        "format:diff": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --dry-run --no-interaction",
+        "refactor": "./vendor/bin/rector",
+        "refactor:diff": "./vendor/bin/rector --dry-run --no-progress-bar"
     }
 }
