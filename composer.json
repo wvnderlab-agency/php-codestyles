@@ -1,7 +1,9 @@
 {
-    "name": "wvnderlab-agency/code-styles",
-    "description": "A custom fixer to provide copyright headers in each file via PHP-CS-Fixer and Laravel Pint",
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "wvnderlab-agency/php-code-styles",
+    "description": "A PHP package providing PHP-CS-Fixer configurations and rulesets for Wvnderlab Agency projects.",
     "keywords": [ "php", "code style", "php-cs-fixer" ],
+    "readme": "README.md",
     "license": "MIT",
     "authors": [
         {
@@ -10,15 +12,16 @@
         }
     ],
     "minimum-stability": "stable",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/wvnderlab-agency/copyright-header"
-        }
-    ],
     "require": {
+        "php": "^8.3",
+        "driftingly/rector-laravel": "^2.1.0",
         "friendsofphp/php-cs-fixer": "^3.80",
-        "wvnderlab-agency/copyright-header": "^0.1.0"
+        "phpstan/phpstan": "^2.1.0",
+        "rector/rector": "^2.2.0",
+        "wvnderlab-agency/php-copyright-header": "^0.1.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
@@ -27,12 +30,13 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "WvnderlabAgency\\CodeStyles\\Composer\\Installer::publishConfiguration"
+            "WvnderlabAgency\\CodeStyles\\Composer::install"
         ],
         "post-update-cmd": [
-            "WvnderlabAgency\\CodeStyles\\Composer\\Installer::publishConfiguration"
+            "WvnderlabAgency\\CodeStyles\\Composer::install"
         ],
-        "analyse": "./vendor/bin/phpstan analyse",
-        "csfix": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php"
+        "analyze": "./vendor/bin/phpstan analyse",
+        "format": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php",
+        "format:diff": "./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --dry-run"
     }
 }
