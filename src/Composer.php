@@ -36,6 +36,8 @@ final readonly class Composer
         self::publishStubFile('.php-cs-fixer.php.dist', '.php-cs-fixer.php');
         // target: phpstan.neon
         self::publishStubFile('phpstan.neon.dist', 'phpstan.neon');
+        // target: rector.php
+        self::publishStubFile('rector.php.dist', 'rector.php');
     }
 
     /**
