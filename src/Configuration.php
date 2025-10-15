@@ -156,6 +156,17 @@ final class Configuration extends Config
     {
         $finder = (new Finder())
             ->in(getcwd() ?: __DIR__ . '/../../../../')
+            ->exclude([
+                '.git',
+                '.github',
+                '.idea',
+                '.vscode',
+                'node_modules',
+                'vendor',
+            ])
+            ->files()
+            ->notName('.php-cs-fixer.php')
+            ->notName('rector.php')
             ->ignoreUnreadableDirs()
             ->ignoreVCS(true)
             ->ignoreVCSIgnored(true);
