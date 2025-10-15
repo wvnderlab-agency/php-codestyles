@@ -26,7 +26,7 @@ use WvnderlabAgency\CopyrightHeader\CopyrightHeaderFixer;
  */
 final class Configuration extends Config
 {
-    private const string RULESET_GENERIC = __DIR__ . '/../.rules/.generic.php';
+    public const string RULESET_GENERIC = __DIR__ . '/../.rules/.generic.php';
     public const string RULESET_LARAVEL = __DIR__ . '/../.rules/laravel.php';
     public const string RULESET_SYMFONY = __DIR__ . '/../.rules/symfony.php';
 
@@ -49,9 +49,9 @@ final class Configuration extends Config
      * Append .rules to the existing ruleset.
      *
      * @param array<string,mixed> $rules
-     * @return static
+     * @return $this
      */
-    public function appendRules(array $rules): static
+    public function appendRules(array $rules): self
     {
         $currentRules = $this->getRules();
         /** @var array<string, array<string, mixed>|bool> $newRules */
@@ -66,9 +66,9 @@ final class Configuration extends Config
      * Exclude directories from scanning.
      *
      * @param string|string[] $dirs
-     * @return static
+     * @return $this
      */
-    public function exclude(array|string $dirs): static
+    public function exclude(array|string $dirs): self
     {
         $this->getFinder()->exclude($dirs);
 
@@ -79,9 +79,9 @@ final class Configuration extends Config
      * Include directories for scanning.
      *
      * @param string|string[] $dirs
-     * @return static
+     * @return $this
      */
-    public function include(array|string $dirs): static
+    public function include(array|string $dirs): self
     {
         $this->getFinder()->in($dirs);
 
@@ -92,9 +92,9 @@ final class Configuration extends Config
      * Ignore dot files.
      *
      * @param bool $ignore
-     * @return static
+     * @return $this
      */
-    public function ignoreDotFiles(bool $ignore = true): static
+    public function ignoreDotFiles(bool $ignore = true): self
     {
         $this->getFinder()->ignoreDotFiles($ignore);
 
@@ -105,9 +105,9 @@ final class Configuration extends Config
      * Ignore files and directories ignored by Git.
      *
      * @param bool $ignore
-     * @return static
+     * @return $this
      */
-    public function ignoreGitIgnored(bool $ignore = true): static
+    public function ignoreGitIgnored(bool $ignore = true): self
     {
         $this->getFinder()->ignoreVCS($ignore);
         $this->getFinder()->ignoreVCSIgnored($ignore);
@@ -121,7 +121,7 @@ final class Configuration extends Config
      * @param non-empty-string $set
      * @return $this
      */
-    public function setRuleset(string $set): static
+    public function setRuleset(string $set): self
     {
         if (!file_exists($set)) {
             $this->handleInvalidRuleset($set);
@@ -138,8 +138,9 @@ final class Configuration extends Config
      * Handle invalid ruleset.
      *
      * @param string $set
+     * @return never
      */
-    protected function handleInvalidRuleset(string $set): void
+    protected function handleInvalidRuleset(string $set): never
     {
         throw new InvalidArgumentException("The ruleset '{$set}' does not exist.");
     }
@@ -149,7 +150,7 @@ final class Configuration extends Config
      *
      * @return $this
      */
-    protected function initializeFinder(): static
+    protected function initializeFinder(): self
     {
         $finder = (new Finder())
             ->in(getcwd() ?: __DIR__ . '/../../../../')
@@ -165,9 +166,9 @@ final class Configuration extends Config
     /**
      * Register the custom fixer from 'wvnderlab-agency/php-copyright-header'.
      *
-     * @return static
+     * @return $this
      */
-    protected function registerCopyrightHeader(): static
+    protected function registerCopyrightHeader(): self
     {
         $this->registerCustomFixers([
             'WvnderlabAgency/copyright_header' => new CopyrightHeaderFixer(),
@@ -179,9 +180,9 @@ final class Configuration extends Config
     /**
      * Set the default ruleset.
      *
-     * @return static
+     * @return $this
      */
-    protected function setDefaultCache(): static
+    protected function setDefaultCache(): self
     {
         $this->setCacheFile('./tmp/php-cs-fixer/cache/.php-cs-fixer.cache');
 
@@ -191,11 +192,11 @@ final class Configuration extends Config
     /**
      * Set the generic ruleset.
      *
-     * @return static
+     * @return $this
      */
-    protected function setGenericRuleset(): static
+    protected function setGenericRuleset(): self
     {
-        $this->setRuleset(static::RULESET_GENERIC);
+        $this->setRuleset(Configuration::RULESET_GENERIC);
 
         return $this;
     }
