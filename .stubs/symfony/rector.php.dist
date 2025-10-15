@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Rector\Config\RectorConfig;
+
+return RectorConfig::configure()
+    ->withPaths([
+        getcwd() . DIRECTORY_SEPARATOR . 'src',
+        getcwd() . DIRECTORY_SEPARATOR . 'tests',
+    ])
+    ->withPhpSets()
+    ->withComposerBased(phpunit: true, symfony: true)
+    ->withImportNames()
+    ->withTypeCoverageLevel(0)
+    ->withTypeCoverageDocblockLevel(0)
+    ->withDeadCodeLevel(1)
+    ->withCodeQualityLevel(2)
+    ->withCodingStyleLevel(2);
