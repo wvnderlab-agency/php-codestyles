@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "wvnderlab-agency/php-code-styles",
+    "name": "wvnderlab-agency/php-codestyles",
     "description": "A PHP package providing PHP-CS-Fixer configurations and rulesets for Wvnderlab Agency projects.",
     "keywords": [ "php", "code style", "php-cs-fixer" ],
     "readme": "README.md",
