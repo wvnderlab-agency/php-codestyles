@@ -1,7 +1,7 @@
-# Wvnderlab - Code-Styles
+# PHP Codestyles
 
-[![Latest Stable Version](https://poser.pugx.org/wvnderlab-agency/code-styles/v/stable)](https://packagist.org/packages/wvnderlab-agency/code-styles)
-[![License](https://poser.pugx.org/wvnderlab-agency/code-styles/license)](https://packagist.org/packages/wvnderlab-agency/code-styles)
+[![Latest Stable Version](https://poser.pugx.org/wvnderlab-agency/php-codestyles/v/stable)](https://packagist.org/packages/wvnderlab-agency/php-codestyles)
+[![License](https://poser.pugx.org/wvnderlab-agency/php-codestyles/license)](https://packagist.org/packages/wvnderlab-agency/php-codestyles)
 
 ## Installation
 
@@ -10,7 +10,7 @@
 You can install the package via Composer by running the following command:
 
 ```shell
-composer require --dev wvnderlab-agency/code-styles
+composer require --dev wvnderlab-agency/php-codestyles
 ```
 
 ### manually
@@ -22,17 +22,19 @@ If you prefer to install the package manually, you can add the following lines t
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/wvnderlab-agency/code-styles"
+      "url": "https://github.com/wvnderlab-agency/php-codestyles"
     }
   ],
   "require-dev": {
-    "wvnderlab-agency/code-styles": "^0.1.0"
+    "wvnderlab-agency/php-codestyles": "^0.1.0"
   }
 }
 ```
 
+### update
+
 If you want to update the package to the latest version, run the following command:
 
 ```shell
-composer update wvnderlab-agency/code-styles
+composer update wvnderlab-agency/php-codestyles
 ```
