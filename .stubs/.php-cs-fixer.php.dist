@@ -1,0 +1,5 @@
+#!/usr/bin/env php
+<?php
+
+return ($config = require getcwd() . '/vendor/wvnderlab-agency/code-styles/.php-cs-fixer.php')
+    ->setRiskyAllowed(true);

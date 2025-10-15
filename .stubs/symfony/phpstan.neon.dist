@@ -1,0 +1,8 @@
+includes:
+    - ./vendor/wvnderlab-agency/code-styles/extension.symfony.neon
+
+parameters:
+    level: 10
+    paths:
+        - src
+    tmpDir: tmp/phpstan

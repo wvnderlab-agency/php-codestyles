@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+use WvnderlabAgency\CodeStyles\Configuration;
+
+($config = require getcwd() . '/vendor/wvnderlab-agency/code-styles/.php-cs-fixer.php')
+    ->setRiskyAllowed(true)
+    ->setRuleset(Configuration::RULESET_SYMFONY)
+    ->exclude([
+        'tmp/*',                    // exclude temp files
+    ]);
+
+return $config;

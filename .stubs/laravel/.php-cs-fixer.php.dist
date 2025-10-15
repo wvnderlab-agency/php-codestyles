@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+use WvnderlabAgency\CodeStyles\Configuration;
+
+return ($config = require getcwd() . '/vendor/wvnderlab-agency/code-styles/.php-cs-fixer.php')
+    ->setRuleset(Configuration::RULESET_LARAVEL)
+    ->exclude([
+        'bootstrap/cache/*',        // exclude cache files
+        'config/*',                 // exclude config files
+        'database/factories/*',     // exclude factories
+        'database/migrations/*',    // exclude migrations
+        'lang/*',                   // exclude language files
+        'storage/*',                // exclude storage files
+        'tmp/*',                    // exclude temp files
+    ]);
