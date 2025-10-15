@@ -27,7 +27,9 @@ use WvnderlabAgency\CopyrightHeader\CopyrightHeaderFixer;
 final class Configuration extends Config
 {
     public const string RULESET_GENERIC = __DIR__ . '/../.rules/.generic.php';
+
     public const string RULESET_LARAVEL = __DIR__ . '/../.rules/laravel.php';
+
     public const string RULESET_SYMFONY = __DIR__ . '/../.rules/symfony.php';
 
     /**
