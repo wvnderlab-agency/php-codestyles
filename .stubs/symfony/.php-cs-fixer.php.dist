@@ -3,7 +3,7 @@
 
 use WvnderlabAgency\CodeStyles\Configuration;
 
-($config = require getcwd() . '/vendor/wvnderlab-agency/code-styles/.php-cs-fixer.php')
+($config = require getcwd() . '/vendor/wvnderlab-agency/php-codestyles/.php-cs-fixer.php')
     ->setRiskyAllowed(true)
     ->setRuleset(Configuration::RULESET_SYMFONY)
     ->exclude([

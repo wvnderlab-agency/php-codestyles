@@ -1,5 +1,5 @@
 includes:
-    - ./vendor/wvnderlab-agency/code-styles/extension.symfony.neon
+    - ./vendor/wvnderlab-agency/php-codestyles/extension.symfony.neon
 
 parameters:
     level: 10

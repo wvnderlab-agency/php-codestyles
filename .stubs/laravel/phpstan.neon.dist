@@ -1,5 +1,5 @@
 includes:
-    - ./vendor/wvnderlab-agency/code-styles/extension.laravel.neon
+    - ./vendor/wvnderlab-agency/php-codestyles/extension.laravel.neon
 
 parameters:
     level: 10
