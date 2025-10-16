@@ -21,7 +21,7 @@ use WvnderlabAgency\CopyrightHeader\CopyrightHeaderFixer;
 /**
  * The **Configuration** class.
  *
- * @package wvnderlab-agency/php-code-styles
+ * @package wvnderlab-agency/php-codestyles
  * @since   0.2.0
  */
 final class Configuration extends Config

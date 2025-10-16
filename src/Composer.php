@@ -18,7 +18,7 @@ namespace WvnderlabAgency\CodeStyles;
  *
  * This class is responsible for publishing configuration files to the packages.
  *
- * @package wvnderlab-agency/php-code-styles
+ * @package wvnderlab-agency/php-codestyles
  * @since   0.2.0
  */
 final readonly class Composer
