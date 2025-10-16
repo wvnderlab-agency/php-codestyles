@@ -7,7 +7,7 @@ use WvnderlabAgency\CodeStyles\Configuration;
     ->setRiskyAllowed(true)
     ->setRuleset(Configuration::RULESET_SYMFONY)
     ->exclude([
-        'tmp/*',                    // exclude temp files
+        'tmp',  // exclude temp files
     ]);
 
 return $config;

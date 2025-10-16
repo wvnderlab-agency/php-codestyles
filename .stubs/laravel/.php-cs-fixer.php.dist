@@ -6,11 +6,11 @@ use WvnderlabAgency\CodeStyles\Configuration;
 return ($config = require getcwd() . '/vendor/wvnderlab-agency/php-codestyles/.php-cs-fixer.php')
     ->setRuleset(Configuration::RULESET_LARAVEL)
     ->exclude([
-        'bootstrap/cache/*',        // exclude cache files
-        'config/*',                 // exclude config files
-        'database/factories/*',     // exclude factories
-        'database/migrations/*',    // exclude migrations
-        'lang/*',                   // exclude language files
-        'storage/*',                // exclude storage files
-        'tmp/*',                    // exclude temp files
+        'bootstrap/cache',      // exclude cache files
+        'config',               // exclude config files
+        'database/factories',   // exclude factories
+        'database/migrations',  // exclude migrations
+        'lang',                 // exclude language files
+        'storage',              // exclude storage files
+        'tmp',                  // exclude temp files
     ]);
