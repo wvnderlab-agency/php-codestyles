@@ -12,5 +12,5 @@
  |
  */
 return array_merge(require '.generic.php', [
-    '@Laravel' => true,
+
 ]);
